@@ -5,6 +5,7 @@ import Signup from "../src/pages/Signup";
 import Navbar from "../src/ui/Navbar";
 import Contact from "../src/pages/Contact";
 import Home from "../src/pages/Home"
+import About from "../src/pages/About"
 import Footer from '../src/ui/Footer';
 function App() {
     const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Home user={user} />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
             <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer/>
