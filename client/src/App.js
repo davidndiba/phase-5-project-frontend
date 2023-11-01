@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Login from "../src/pages/Login";
+import Signup from "../src/pages/Signup";
+import Navbar from "../src/ui/Navbar";
+import Contact from "../src/pages/Contact";
+import Home from "../src/pages/Home"
+import About from "../src/pages/About"
+import Footer from '../src/ui/Footer';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+    const [user, setUser] = useState(null);
+  
+    const handleLogin = (userData) => {
+      setUser(userData);
+    };
+  
+    const handleSignup = (userData) => {
+      setUser(userData);
+    };
+  
+    return (
+      <Router>
+        <div>
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home user={user} />} />
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer/>
+        </div>
+      </Router>
+    );
+  }
+  
+  export default App;
+  
+  
+  
+  
+  
