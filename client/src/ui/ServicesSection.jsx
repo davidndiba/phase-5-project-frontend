@@ -10,27 +10,27 @@ function ServicesSection() {
 
       <div className="all_services">
         <div className="service">
-          <span>💇‍♀️</span>
+          <span></span>
           <h1>Projects</h1>
           <p>
           Every year, millions of individuals help support communities in need through organizing fundraisers, setting up donation programs and holding community service events. Orphan Life Foundation has been recognizing those areas which require attention through the following programs:
           </p>
-          <Link to="/hair_studio">
+          <Link to="/projects">
             <button className="service_btn">See All &rarr;</button>
           </Link>
         </div>
         <div className="service">
-          <span>💄</span>
+          <span></span>
           <h1>Programs</h1>
           <p>
           Our programs are geared towards creating a better life for the less privileged children.
           </p>
-          <Link to="/make_up">
+          <Link to="/programs">
             <button className="service_btn">See All &rarr;</button>
           </Link>
         </div>
         <div className="service">
-          <span>💅</span>
+          <span></span>
           <h1>Children Homes</h1>
           <p>
           Let’s Spread A Smile
@@ -38,7 +38,7 @@ function ServicesSection() {
           Come Cultivate Love
           Not Fears
           </p>
-          <Link to="/nail_bar">
+          <Link to="/children_homes">
             <button className="service_btn">See All &rarr;</button>
           </Link>
         </div>
