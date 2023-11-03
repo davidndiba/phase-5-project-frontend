@@ -1,0 +1,95 @@
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0 16px;
+    height: 48px;
+    border: 0;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &__primary {
+      background-color: #1BCDA3;
+      color: #ffffff;
+
+      &:focus {
+        background-color: #1BCDA3;
+        box-shadow: inset 0 0 0 2px #1BCDA3,
+          inset 0 0 0 3px #ffffff;
+      }
+
+      &:hover,
+      &:active {
+        background-color: #27b592;
+      }
+    }
+
+    &__secondary {
+      background-color: #cfd1d3;
+      color: #0b0c0d;
+
+      &:focus {
+        background-color: #cfd1d3;
+        box-shadow: inset 0 0 0 2px #cfd1d3,
+          inset 0 0 0 3px #ffffff;
+      }
+
+      &:hover,
+      &:active {
+        background-color: #0b0c0d;
+        color: #ffffff;
+      }
+
+      &--outline {
+        background-color: none;
+        border: 1px solid #9ca0a5;
+        height: 46px;
+
+        &:focus {
+          border: 1px solid #56595d;
+          box-shadow: inset 0 0 0 1px #56595d;
+        }
+
+        &:hover,
+        &:active {
+          border: 1px solid #0b0c0d;
+        }
+      }
+
+      &--text {
+        background-color: transparent;
+        border: 1px solid transparent;
+        height: 46px;
+        line-height: 46px;
+
+        &:focus {
+          border: 1px solid #56595d;
+          box-shadow: inset 0 0 0 1px #56595d;
+        }
+
+        &:hover,
+        &:active {
+          border: 1px solid #0b0c0d;
+        }
+      }
+    }
+
+    &:focus {
+      outline-color: transparent;
+      outline-width: 2px;
+      outline-style: dotted;
+    }
+
+    &:focus:active {
+      box-shadow: none;
+    }
+  }
