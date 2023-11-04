@@ -15,9 +15,9 @@ function Gallery() {
   return (
     <>
       <div className="featured">
-        <h2 className="heading">What We Do</h2>
+        <h2 className="heading">Volunteer Today</h2>
         <h1 className="sub-heading">
-          Help put a smile on a dull face.
+        When we give of our love, we display a saviour who, in perfect and unconditional love adopted us into his family
         </h1>
 
         <div class="gallery">

@@ -16,11 +16,10 @@ function AppointmentSection({ user }) {
         <img className="appointment_img" src={image} alt="Appointment" />
       </div>
       <div className="appointment_right">
-        <h1 className="heading">Lets Go</h1>
+        <h1 className="heading">How We Are Helping.</h1>
         <h1 className="sub-heading">BOOK A VISIT</h1>
         <p>
-          Book an appointment today and let us help you  transform and put a smile to a
-          non-priviledged kid Today.
+        Children who grow up in orphanages are at much higher risk of becoming victims of violence, trafficking and exploitation.
         </p>
         <button onClick={handleBook} className="booknow">
           Visit now &rarr;
