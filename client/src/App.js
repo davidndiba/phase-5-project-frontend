@@ -9,6 +9,8 @@ import Contact from "../src/pages/Contact";
 import Home from "../src/pages/Home";
 import About from "../src/pages/About";
 import Programs from "../src/pages/Programs";
+import Fundraising from "./ui/Fundraising";
+import Volunteer from "./ui/Volunteer";
 import Projects from "../src/pages/Projects";
 import OurMission from "./ui/OurMission";
 import WhatWeDo from "./ui/WhatWeDo";
@@ -40,6 +42,8 @@ function App() {
             <Route path="/about/financial-information" element={<FinancialInformation />} />
             <Route path="/about/donate-here" element={<DonateHere />} />
             <Route path="/programs" element={<Programs />} />
+            <Route path="/programs/fundraising" element={<Fundraising />} />
+            <Route path="/programs/volunteer" element={<Volunteer />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/ourmission" element={<OurMission />} />
             <Route path="/contact" element={<Contact />} />
