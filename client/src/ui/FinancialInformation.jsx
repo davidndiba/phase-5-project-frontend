@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function OurMission() {
-  const [services, setServices] = useState([]);
-  
-  useEffect(() => {
-    fetch("/makeup_services")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
-
+function FinancialInformation() {
   return (
     <div>
       <h1>Our Mission</h1>
@@ -76,4 +68,4 @@ function OurMission() {
   );
 }
 
-export default OurMission;
+export default FinancialInformation;

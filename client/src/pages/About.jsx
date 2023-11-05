@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+
 import Map from "../ui/Map";
+import { Link, Routes, Route, Outlet } from "react-router-dom";
+
 
 function About() {
   // Define styles
@@ -73,41 +75,42 @@ function About() {
 
       <div className="AboutContainer">
         <div className="ImageContainer">
-          <a href="link-to-our-mission">
+        <Link to="/about/our-mission">
             <img
               src="https://i.pinimg.com/564x/9f/8e/db/9f8edb137998ee8733fc34a75df3e322.jpg"
               alt="Our Mission"
             />
             <div className="ImageText">Our Mission</div>
-          </a>
+          </Link>
         </div>
         <div className="ImageContainer">
-          <a href="link-to-what-we-do">
+        <Link to="/about/what-we-do">
             <img
               src="https://i.pinimg.com/564x/9d/d8/ee/9dd8ee99ab01afda9780229d09ced9d8.jpg"
               alt="What We Do"
             />
             <div className="ImageText">What We Do</div>
-          </a>
+          </Link>
         </div>
         <div className="ImageContainer">
-          <a href="link-to-financial-information">
+        <Link to="/about/financial-information">
             <img
               src="https://i.pinimg.com/564x/c7/5c/14/c75c14c2b95f57b5ae5b154c2db80fbc.jpg"
               alt="Financial Information"
             />
             <div className="ImageText">Financial Information</div>
-          </a>
+          </Link>
         </div>
         <div className="ImageContainer">
-          <a href="link-to-donate-here">
+        <Link to="/about/donate-here">
             <img
               src="https://i.pinimg.com/564x/f4/a0/cd/f4a0cd3039e7a43effe48efc61326d1d.jpg"
               alt="Donate Here"
             />
             <div className="ImageText">Donate Here</div>
-          </a>
+          </Link>
         </div>
+        
       </div>
       <div className="row">
         <div className="col-md-3">
