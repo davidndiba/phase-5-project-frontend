@@ -1,71 +1,214 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-function DonateHere() {
+const donationsCardStyle = {
+  backgroundColor: "#f0f0f0",
+  padding: "20px",
+  borderRadius: "10px",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+  margin: "10px",
+  width: "80%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+};
+
+const headingStyle = {
+  fontSize: "24px",
+  fontWeight: "bold",
+  margin: "10px 0",
+};
+
+const inputStyle = {
+  width: "100%",
+  padding: "10px",
+  marginBottom: "10px",
+  borderRadius: "5px",
+  border: "1px solid #ccc",
+};
+
+const textareaStyle = {
+  width: "100%",
+  padding: "10px",
+  marginBottom: "10px",
+  borderRadius: "5px",
+  border: "1px solid #ccc",
+};
+
+const checkboxLabelStyle = {
+  display: "block",
+  margin: "10px 0",
+};
+
+const buttonStyle = {
+  backgroundColor: "blue",
+  color: "white",
+  padding: "10px 20px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  border: "none",
+  cursor: "pointer",
+};
+
+const DonationsForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    postalCode: "",
+    fundraisingPlan: "",
+    eventDate: "",
+    fundraisingAmount: "",
+    consentToRecording: false,
+    consentToCommunications: [],
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log(formData);
+  };
+
   return (
-    <div>
-      <h1>Our Mission</h1>
-      <p>This is where you can provide detailed information about your mission.</p>
-
-      <div className="banner_container page_banner_container">
-        <h1 className="tagline">About us</h1>
-        <img
-          src="https://i.pinimg.com/236x/41/93/89/419389a72c791a0ec9b3270a23dc3c69.jpg"
-          alt="Banner"
-          className="banner page_banner"
+    <div style={donationsCardStyle}>
+      <h2 style={headingStyle}>Fundraising for Hearts To Homes Children's Villages In Kenya</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="First Name"
+          style={inputStyle}
+          required
         />
-      </div>
-
-      <div className="inspirational_text py-10 text-center">
-        <p style={{ fontSize: '18px' }}>
-          It is every child’s right to receive the love, care, and attention of their family, community, or even a stranger.
-        </p>
-      </div>
-
-      <div className="container mx-auto py-10">
-        <h2 className="text-4xl font-bold text-center mb-8" style={{ color: 'green' }}>
-          OUR MISSION
-        </h2>
-        <div className="flex flex-wrap justify-center items-center">
-          <div className="w-full md:w-1/2 p-5">
-            <img src="https://i.pinimg.com/236x/6e/03/41/6e03412340ef8f4e1e190e6eada11cc6.jpg" alt="Our Mission" className="mx-auto" />
-          </div>
-          <div className="w-full md:w-1/2 p-5">
-            <p style={{ fontSize: '24px' }}>
-              <strong>Vision:</strong> A world where every orphaned child experiences a loving, safe, and nurturing environment, and is provided the opportunities and support necessary to thrive.<br/><br/>
-
-              <strong>Mission:</strong> Hearts to Homes is committed to transforming the lives of orphaned children across the globe by catalyzing a worldwide movement of compassionate support and action. By seamlessly connecting donors, volunteers, and child care institutions, we aim to facilitate meaningful contributions that make a profound impact on the lives of these vulnerable children.<br/><br/>
-            </p>
-          </div>
+        <input
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          placeholder="Last Name"
+          style={inputStyle}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email Address"
+          style={inputStyle}
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Phone Number"
+          style={inputStyle}
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
+          placeholder="Home Address"
+          style={inputStyle}
+          required
+        />
+        <input
+          type="text"
+          name="postalCode"
+          value={formData.postalCode}
+          onChange={handleChange}
+          placeholder="Postal Code"
+          style={inputStyle}
+          required
+        />
+        <textarea
+          name="fundraisingPlan"
+          value={formData.fundraisingPlan}
+          onChange={handleChange}
+          placeholder="How do you plan to fundraise in aid of Hearts To Homes Children's Villages in Kenya?(Donate Cloathes, Donate Food, Donate Medicines, Donate Money)"
+          style={textareaStyle}
+          required
+        />
+        <input
+          type="text"
+          name="eventDate"
+          value={formData.eventDate}
+          onChange={handleChange}
+          placeholder="When will your activity/event take place? (mm/dd/yyyy)"
+          style={inputStyle}
+          required
+        />
+        <input
+          type="number"
+          name="fundraisingAmount"
+          value={formData.fundraisingAmount}
+          onChange={handleChange}
+          placeholder="How much are you planning to raise? (Amount in KES)"
+          style={inputStyle}
+          required
+        />
+        <div>
+          <label style={checkboxLabelStyle}>
+            <input
+              type="checkbox"
+              name="consentToRecording"
+              checked={formData.consentToRecording}
+              onChange={handleChange}
+            />
+            I consent to Hearts To Homes Children’s Villages Kenya recording personal information about me
+          </label>
+          <label style={checkboxLabelStyle}>
+            <input
+              type="checkbox"
+              name="consentToCommunications"
+              value="email"
+              checked={formData.consentToCommunications.includes("email")}
+              onChange={handleChange}
+            />
+            I would like to receive communications by email
+          </label>
+          <label style={checkboxLabelStyle}>
+            <input
+              type="checkbox"
+              name="consentToCommunications"
+              value="telephone"
+              checked={formData.consentToCommunications.includes("telephone")}
+              onChange={handleChange}
+            />
+            I would like to receive communications by telephone
+          </label>
+          <label style={checkboxLabelStyle}>
+            <input
+              type="checkbox"
+              name="consentToCommunications"
+              value="post"
+              checked={formData.consentToCommunications.includes("post")}
+              onChange={handleChange}
+            />
+            I would like to receive communications by post
+          </label>
         </div>
-      </div>
-
-      <div className="container mx-auto py-10 bg-gray-100">
-        <h2 className="text-4xl font-bold text-center mb-8" style={{ color: 'green' }}>
-          WHAT WE DO
-        </h2>
-        <div className="flex flex-wrap justify-center items-center">
-          <div className="w-full md:w-1/2 p-5">
-            <p style={{ fontSize: '24px' }}>
-              Hearts to Homes plays a pivotal role in supporting orphanages worldwide, striving to provide orphaned children with a life full of hope, dignity, and opportunity. We act as a conduit, bringing together donors, volunteers, and orphanages, facilitating a transformative impact on the lives of the children.
-            </p>
-          </div>
-          <div className="w-full md:w-1/2 p-5">
-            <img src="https://i.pinimg.com/236x/eb/89/5a/eb895af209ae428d348fd8d225e1fab5.jpg" alt="What We Do" className="mx-auto" />
-          </div>
-        </div>
-      </div>
-
-      <div className="image_grid">
-        {/* Your existing image grid code here */}
-      </div>
-
-      <div className="links">
-        <a href="link_to_mpesa">M-Pesa</a>
-        <a href="link_to_worldvision">World Vision</a>
-      </div>
+        <button style={buttonStyle}>Submit</button>
+        <h2>*We ask that our donors and fundraisers use our domain www.heartstohomeschildrensvillageskenya.org as the trusted source for donations and not any other.</h2>
+      </form>
     </div>
   );
-}
+  }
 
-export default DonateHere;
+export default DonationsForm;

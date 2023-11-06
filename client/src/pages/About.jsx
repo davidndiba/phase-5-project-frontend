@@ -98,7 +98,7 @@ function About() {
               src="https://i.pinimg.com/564x/c7/5c/14/c75c14c2b95f57b5ae5b154c2db80fbc.jpg"
               alt="Financial Information"
             />
-            <div className="ImageText">Financial Information</div>
+            <div className="ImageText">Frequently Asked Questions (FAQs)</div>
           </Link>
         </div>
         <div className="ImageContainer">

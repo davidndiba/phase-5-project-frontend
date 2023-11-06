@@ -3,17 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faMedkit, faTshirt } from '@fortawesome/free-solid-svg-icons';
 
 function SupportSection() {
+  const containerStyle = {
+    backgroundColor: "#6C6262"
+    // color: "white"
+  };
   const supportTextStyle = {
     textAlign: 'center',
     fontWeight: 'bolder',
     color: 'black',
     textTransform: 'uppercase',
+    fontSize: "28px"
   };
 
   const ourThemeStyle = {
     textAlign: 'center',
     fontWeight: 'bold',
-    color: 'blue',
+    color: 'white',
     textDecoration: 'underline',
   };
 
@@ -25,11 +30,17 @@ function SupportSection() {
   const buttonStyle = {
     textAlign: 'center',
     backgroundColor: 'blue',
+    position:'center'
   };
 
   const buttonTextStyle = {
     color: 'black',
-    fontWeight: 'bold',
+    fontWeight: '100px ',
+    backgroundColor:"blue",
+    padding: '10px',
+    borderRadius:'10px',
+    cursor: 'pointer',
+
   };
 
   // CSS styles for the image containers
@@ -45,9 +56,15 @@ function SupportSection() {
     width: '100px', // Adjust the size as needed
     height: 'auto',
   };
+  // const ourThemeStyle ={
+  //   textAlign: 'center',
+  //   fontWeight: 'bold',
+  //   color: '#3498db',
+  //   textDecoration: 'underline'
+  // }
 
   return (
-    <div className="container">
+    <div className="container" style={containerStyle}>
       <div className="row">
         <div className="col-md-12">
           {/* Support Text */}
@@ -92,7 +109,7 @@ function SupportSection() {
       <div className="row">
         <div className="col-md-12">
           {/* Button Container */}
-          <div className="text-center" style={{ backgroundColor: 'blue' }}>
+          <div className="text-center" >
             <button style={buttonTextStyle}>Ways to Support</button>
           </div>
 
@@ -140,8 +157,8 @@ function SupportSection() {
             
           </div>
           {/*Button Container*/}
-          <div className="text-center" style={{ backgroundColor: 'blue' }}>
-            <button style={buttonTextStyle}>Donate</button>
+          <div className="text-center">
+            <button style={buttonTextStyle}>Donate Here</button>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ function ServicesSection() {
       <div className="all_services">
         <div className="service">
           <span></span>
-          <h1>Projects</h1>
+          <h1>About</h1>
           <p>
           Every year, millions of individuals help support communities in need through organizing fundraisers, setting up donation programs and holding community service events. Orphan Life Foundation has been recognizing those areas which require attention through the following programs:
           </p>
